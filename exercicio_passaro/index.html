@@ -1,0 +1,123 @@
+<!-- Estrutura básica html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando arquivo phaser online -->
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <title>Exercício do Pássaro</title>
+
+    <!-- Folha de estilos -->
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;  }
+    </style>
+</head>
+<body>
+
+    <!-- Criando o script dentro do html -->
+
+    <script>
+
+    // Configurações iniciais do Phaser
+
+        var config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+    
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        // Criando a instância do jogo
+    
+        var game = new Phaser.Game(config);
+
+        // Criando a variável para o passarinho
+    
+        var passarinho;
+
+        function preload() {
+
+            // Carrega as imagens e sprites com as devidas configurações (tamanho dos frames)
+
+            this.load.image('bg', 'assets/bg_space.png');
+            this.load.spritesheet('bird', 'assets/bird-purple.png', {frameWidth: 75, frameHeight: 75})
+        }
+
+        function create() {
+
+            // Função para adicionar as imagens e sprites no projeto
+
+            this.add.image(400, 300, 'bg').setScale(1.2);
+            passarinho = this.add.sprite(100, 300, 'bird').setScale(1.3);
+
+            // Função para criar a animação de voo do pássaro
+
+            this.anims.create({
+                key: 'fly',
+
+                // Define a "quantidade" de frames
+
+                frames: this.anims.generateFrameNumbers('bird', {start: 0, end: 7}),
+            })
+
+            // Instancia a animação de voo ao passaro
+
+            passarinho.anims.play('fly', true);
+        }
+    
+        function update() { 
+
+            //  Estrutura condicional: se o valor da posição do passarinho no eixo x for idêntico a 100 (ponto inicial), inicia-se a ida
+
+            if (passarinho.x === 100) {
+
+                // Garante que a imagem do passaro não seja espelhada
+                passarinho.setFlip(false, false);
+                // Variável que indica que o pássaro deve se mover para a direita
+                passarinho.ida = true;
+            }
+
+            // Estrutura condicional: caso o valor da posição do passarinho no eixo x for menor que 700 (ponto final) e a ida estiver como true (verdadeira), adiciona-se 5 a posição x
+
+            if (passarinho.x < 700 && passarinho.ida === true) {
+                console.log('Adiciona 5 unidades por frame, para que ele continue se deslocando para esquerda')
+                passarinho.x += 5;
+            }
+
+            //  Estrutura condicional: se o valor da posição do passarinho no eixo x for idêntico a 700 (ponto final), inicia-se a volta
+
+            if (passarinho.x === 700) {
+                // Garante que a imagem do passaro seja espelhada para a esquerda
+                passarinho.setFlip(true, false);
+                // Variável que indica que ida é falso, ou seja, ele está na volta, em direção a esquerda
+                passarinho.ida = false;
+            }
+
+            //  Estrutura condicional: se o valor da posição do passarinho no eixo x for maior que 100 (ponto final da direita para a esquerda), e o passarinho estiver se movendo para esquerda
+
+            if (passarinho.x > 100 && passarinho.ida === false) {
+                console.log('São retiradas 5 unidades por frame, para que ele continue se deslocando para esquerda')
+                passarinho.x -= 5;
+            }
+
+        }
+    
+    </script>
+
+</body>
+</html>
