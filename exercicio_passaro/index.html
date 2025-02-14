@@ -68,9 +68,11 @@
             this.anims.create({
                 key: 'fly',
 
-                // Define a "quantidade" de frames
+                // Define a "quantidade" de frames e ajusta eles
 
                 frames: this.anims.generateFrameNumbers('bird', {start: 0, end: 7}),
+                frameRate: 10,
+                repeat: -1
             })
 
             // Instancia a animação de voo ao passaro
