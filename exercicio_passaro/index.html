@@ -23,9 +23,7 @@
     </style>
 </head>
 <body>
-
     <!-- Criando o script dentro do html -->
-
     <script>
 
     // Configurações iniciais do Phaser
@@ -115,9 +113,40 @@
                 passarinho.x -= 5;
             }
 
+            // Estrutura condicional: Se o passarinho estiver com a variável subindo idêntica a undefined, ele ativa o subir
+
+            if (passarinho.subindo === undefined) {
+                passarinho.subindo = true;
+            }
+
+            // Estrutura condicional: Aqui o for é mais ilustrativo e não tem uma utilidade muito eficaz (funciona, porém não acrescenta tanto valor ao jogo), porém, caso implementado uma função (que poderia ser chamada em momentos específicos, não de forma contínua como está ocorrendo), cada vez que ela fosse chamada, o "for" garantiria a mudança do passarinho no eixo y por no mínimo 3 vezes através de sua variável contadora i
+
+            for (let i = 0; i < 4; i++) {
+
+                // Estrutura condicional que verifica se a variável passarinho.subindo está "true" e faz as verificações necessárias
+
+                if (passarinho.subindo) {
+
+                    // Estrutura condicional: se o valor da posição do passarinho no eixo y for menor ou igual a 200, o passarinho perde -1 no eixo y, subindo
+                    if (passarinho.y > 200) {
+                        passarinho.y -= 1;
+                    } else {
+                        passarinho.subindo = false;
+                    }
+                } else {
+
+                    // Estrutura condicional: se o valor da posição do passarinho no eixo y for maior ou igual a 350, o passarinho o passarinho ganha +1 no eixo y, descendo
+                    if (passarinho.y < 350) {
+                        passarinho.y += 1;
+                    } else {
+                        passarinho.subindo = true;
+                    }
+                }
+            }
+
+
         }
     
     </script>
-
 </body>
 </html>
