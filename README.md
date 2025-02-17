@@ -10,11 +10,23 @@ Este repositório tem a finalidade de apresentar a tarefa desenvolvida por meio 
 
 - Linguagens e frameworks utilizados: HTML, CSS, JavaScript e Phaser.
 
+<hr>
+
 # 2. Jogo Passarinho 🐦
 
 Este repositório tem a finalidade de apresentar a tarefa desenvolvida por meio de um autoestudo de computação (definido pelo professor Cristiano Benites), que será atualizado ao longo das semanas. O tema é atrelado a passaros, por isso apresenta um como personagem principal, além de outros elementos funcionais, incluindo o voo na vertical e horizontal.
 
 🪽🦜🐦‍⬛🕊️🦅
+
+<hr>
+
+- Linguagens e frameworks utilizados: HTML, CSS, JavaScript e Phaser.
+
+# 2. Jogo Alien 👽
+
+Este repositório tem a finalidade de apresentar a tarefa desenvolvida por meio de um autoestudo de computação (definido pelo professor Cristiano Benites), que será atualizado ao longo das semanas. O tema é atrelado a alienígenas, por isso apresenta um como personagem principal, além de outros elementos funcionais, incluindo o voo na vertical e horizontal, animação conforme as teclas apertadas, colisão com plataformas, "recolhimento" de moedas e acúmulo de pontos...
+
+👾🚀🛸🪐🌌
 
 
 - Linguagens e frameworks utilizados: HTML, CSS, JavaScript e Phaser.
