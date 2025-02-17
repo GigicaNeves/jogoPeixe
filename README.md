@@ -18,9 +18,9 @@ Este repositório tem a finalidade de apresentar a tarefa desenvolvida por meio 
 
 🪽🦜🐦‍⬛🕊️🦅
 
-<hr>
-
 - Linguagens e frameworks utilizados: HTML, CSS, JavaScript e Phaser.
+
+<hr>
 
 # 2. Jogo Alien 👽
 
